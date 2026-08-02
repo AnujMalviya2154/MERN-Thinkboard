@@ -1,5 +1,3 @@
-<![CDATA[<div align="center">
-
 # 📝 ThinkBoard
 
 ### A Full-Stack Notes Application Built with the MERN Stack
@@ -15,28 +13,21 @@
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
 
-</div>
-
 ---
 
 ## 📸 Screenshots
 
-<div align="center">
-
 ### Homepage — Notes Grid
-<img src="./screenshots/homepage.png" alt="ThinkBoard Homepage" width="800"/>
 
-<br/><br/>
+![ThinkBoard Homepage](./screenshots/homepage.png)
 
 ### Create New Note
-<img src="./screenshots/create_note.png" alt="Create Note Page" width="800"/>
 
-<br/><br/>
+![Create Note Page](./screenshots/create_note.png)
 
 ### Edit & Delete Note
-<img src="./screenshots/edit_note.png" alt="Edit Note Page" width="800"/>
 
-</div>
+![Edit Note Page](./screenshots/edit_note.png)
 
 ---
 
@@ -47,7 +38,7 @@
 - **IP-Based Rate Limiting** — Redis-powered sliding window rate limiter (100 requests/60s per IP) using Upstash
 - **Production-Ready Deployment** — Static React frontend served from Express in production via same-origin architecture
 - **Responsive Dark UI** — Modern dark theme built with Tailwind CSS and DaisyUI
-- **Real-Time Feedback** — Toast notifications for all user actions via `react-hot-toast`
+- **Real-Time Feedback** — Toast notifications for all user actions via react-hot-toast
 
 ---
 
@@ -141,17 +132,17 @@ MERN-Thinkboard/
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology              | Purpose                                         |
-| ------------ | ----------------------- | ----------------------------------------------- |
-| **Frontend** | React 19                | UI component library                            |
-| **Routing**  | React Router 7          | Client-side SPA navigation                      |
-| **Styling**  | Tailwind CSS + DaisyUI  | Utility-first CSS with pre-built dark theme     |
-| **Bundler**  | Vite (Rolldown)         | Lightning-fast HMR and optimized production builds |
-| **HTTP**     | Axios                   | Promise-based HTTP client for API calls         |
-| **Backend**  | Express.js              | Minimal Node.js web framework                   |
-| **Database** | MongoDB Atlas + Mongoose| Cloud-hosted NoSQL database with ODM            |
-| **Caching**  | Upstash Redis           | Serverless Redis for IP-based rate limiting     |
-| **Deploy**   | Render                  | Cloud platform with auto-deploy from GitHub     |
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | React 19 | UI component library |
+| **Routing** | React Router 7 | Client-side SPA navigation |
+| **Styling** | Tailwind CSS + DaisyUI | Utility-first CSS with pre-built dark theme |
+| **Bundler** | Vite (Rolldown) | Lightning-fast HMR and optimized production builds |
+| **HTTP** | Axios | Promise-based HTTP client for API calls |
+| **Backend** | Express.js | Minimal Node.js web framework |
+| **Database** | MongoDB Atlas + Mongoose | Cloud-hosted NoSQL database with ODM |
+| **Caching** | Upstash Redis | Serverless Redis for IP-based rate limiting |
+| **Deploy** | Render | Cloud platform with auto-deploy from GitHub |
 
 ---
 
@@ -159,13 +150,13 @@ MERN-Thinkboard/
 
 All endpoints are prefixed with `/api/notes`
 
-| Method   | Endpoint          | Description             | Status Codes      |
-| -------- | ----------------- | ----------------------- | ------------------ |
-| `GET`    | `/api/notes`      | Fetch all notes         | `200` `500`        |
-| `GET`    | `/api/notes/:id`  | Fetch a note by ID      | `200` `404` `500`  |
-| `POST`   | `/api/notes`      | Create a new note       | `201` `500`        |
-| `PUT`    | `/api/notes/:id`  | Update a note by ID     | `200` `404` `500`  |
-| `DELETE` | `/api/notes/:id`  | Delete a note by ID     | `200` `404` `500`  |
+| Method | Endpoint | Description | Status Codes |
+|--------|----------|-------------|-------------|
+| `GET` | `/api/notes` | Fetch all notes | `200` `500` |
+| `GET` | `/api/notes/:id` | Fetch a note by ID | `200` `404` `500` |
+| `POST` | `/api/notes` | Create a new note | `201` `500` |
+| `PUT` | `/api/notes/:id` | Update a note by ID | `200` `404` `500` |
+| `DELETE` | `/api/notes/:id` | Delete a note by ID | `200` `404` `500` |
 
 > **Rate Limit:** All endpoints are protected by a sliding window rate limiter — **100 requests per 60 seconds per IP address**. Exceeding this limit returns `429 Too Many Requests`.
 
@@ -174,8 +165,8 @@ All endpoints are prefixed with `/api/notes`
 ## 🔒 Security
 
 - **IP-Based Rate Limiting** — Upstash Redis sliding window algorithm tracks requests per unique client IP, preventing API abuse while ensuring legitimate users are unaffected
-- **CORS Protection** — Cross-Origin Resource Sharing restricted to `localhost:5173` in development; disabled in production (same-origin serving)
-- **Environment Variables** — All secrets (`MONGO_URI`, Redis tokens) stored in `.env` and excluded via `.gitignore`
+- **CORS Protection** — Cross-Origin Resource Sharing restricted to localhost:5173 in development; disabled in production (same-origin serving)
+- **Environment Variables** — All secrets (MONGO_URI, Redis tokens) stored in .env and excluded via .gitignore
 - **Same-Origin Production** — React static bundle served directly from Express, eliminating cross-origin attack vectors entirely
 
 ---
@@ -207,7 +198,7 @@ UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_token
 NODE_ENV=development
 ```
 
-### 3. Install Dependencies & Run
+### 3. Install Dependencies and Run
 
 ```bash
 # Install backend dependencies
@@ -231,19 +222,19 @@ The backend runs on `http://localhost:5001` and the frontend on `http://localhos
 
 This application is deployed as a single **Web Service** on Render with same-origin architecture.
 
-| Setting           | Value                                                                                      |
-| ----------------- | ------------------------------------------------------------------------------------------ |
-| **Build Command** | `npm run build` *(runs root package.json: installs backend, installs frontend, builds Vite)* |
-| **Start Command** | `npm run start` *(starts Express which serves the compiled React frontend)*                 |
+| Setting | Value |
+|---------|-------|
+| **Build Command** | `npm run build` (runs root package.json: installs backend, installs frontend, builds Vite) |
+| **Start Command** | `npm run start` (starts Express which serves the compiled React frontend) |
 
 ### Environment Variables on Render
 
-| Key                        | Value                            |
-| -------------------------- | -------------------------------- |
-| `MONGO_URI`                | Your MongoDB Atlas connection URI |
-| `UPSTASH_REDIS_REST_URL`   | Your Upstash Redis REST URL       |
-| `UPSTASH_REDIS_REST_TOKEN` | Your Upstash Redis REST Token     |
-| `NODE_ENV`                 | `production`                      |
+| Key | Value |
+|-----|-------|
+| `MONGO_URI` | Your MongoDB Atlas connection URI |
+| `UPSTASH_REDIS_REST_URL` | Your Upstash Redis REST URL |
+| `UPSTASH_REDIS_REST_TOKEN` | Your Upstash Redis REST Token |
+| `NODE_ENV` | `production` |
 
 > **Note:** Do **not** set `PORT` on Render. Render dynamically assigns its own port, and the Express server picks it up automatically via `process.env.PORT || 5001`.
 
@@ -255,9 +246,4 @@ This project is licensed under the [ISC License](./LICENSE).
 
 ---
 
-<div align="center">
-
 **Built with ❤️ by [Anuj Malviya](https://github.com/AnujMalviya2154)**
-
-</div>
-]]>
